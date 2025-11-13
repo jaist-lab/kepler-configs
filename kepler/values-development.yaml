@@ -1,0 +1,5 @@
+clusterName: "development"
+
+kepler:
+  gpu:
+    enabled: false  # Development には GPU がない

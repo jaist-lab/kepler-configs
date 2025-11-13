@@ -1,0 +1,11 @@
+clusterName: "production"
+
+kepler:
+  gpu:
+    enabled: true
+    dcgm:
+      enabled: true
+
+  # GPU ノードにのみデプロイ
+  nodeSelector:
+    node-role.kubernetes.io/gpu: "true"

@@ -1,0 +1,11 @@
+apiVersion: v2
+name: kepler
+description: Kubernetes Efficient Power Level Exporter
+type: application
+version: 0.1.0
+appVersion: "latest"
+
+dependencies:
+  - name: kepler
+    version: "0.5.12"
+    repository: https://sustainable-computing-io.github.io/kepler-helm-chart

@@ -1,0 +1,45 @@
+# クラスタ名（各クラスタで上書き可能）
+clusterName: "development"
+
+# Kepler の設定
+kepler:
+  # イメージ設定
+  image:
+    repository: quay.io/sustainable_computing_io/kepler
+    tag: latest
+    pullPolicy: IfNotPresent
+
+  # リソース設定
+  resources:
+    limits:
+      cpu: 500m
+      memory: 512Mi
+    requests:
+      cpu: 100m
+      memory: 128Mi
+
+  # GPU サポート（GPU クラスタの場合）
+  gpu:
+    enabled: true
+    dcgm:
+      enabled: true
+
+  # ノードセレクタ（特定のノードにのみデプロイする場合）
+  nodeSelector: {}
+  
+  # 特権モード（eBPF のために必要）
+  securityContext:
+    privileged: true
+
+# ServiceMonitor（Prometheus Operator 使用時）
+serviceMonitor:
+  enabled: true
+  interval: 30s
+  labels:
+    release: prometheus
+
+# Service 設定
+service:
+  type: ClusterIP
+  port: 9102
+  targetPort: 9102

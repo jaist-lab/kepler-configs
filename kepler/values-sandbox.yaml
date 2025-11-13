@@ -1,0 +1,5 @@
+clusterName: "sandbox"
+
+kepler:
+  gpu:
+    enabled: false  # sandbox には GPU がない
